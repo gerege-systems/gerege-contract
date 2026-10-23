@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="mn" data-site="contract">
+
+<head>
+    <title>Нүүр | Gerege Contract — eID-ээр гэрээ байгуулах платформ</title>
+
+<!-- Meta Tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="title" content="Gerege Contract — eID-ээр гэрээ байгуулах платформ">
+<meta name="description" content="Gerege Contract — загвараасаа гэрээ үүсгээд талуудаа регистрээр нэрлэнэ. Тал бүр eID Mongolia аппаараа ээлжээрээ тоон гарын үсэг зурна — уулзах, хэвлэх, скан хийх шаардлагагүй.">
+<meta name="keywords" content="цахим гэрээ, тоон гарын үсэг, eID Mongolia, PAdES, гэрээ байгуулах, Gerege Contract">
+<meta name="author" content="Gerege Systems">
+<meta name="robots" content="index, follow">
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="/images/contract-logo.png">
+
+    <!-- Theme: saved choice, else system preference (runs before paint) -->
+<script>
+    (function () {
+        var t;
+        try { t = localStorage.getItem('theme'); } catch (e) {}
+        if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+    })();
+</script>
+
+<!-- Google Font Link (https://fonts.google.com/) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <script type="module" crossorigin src="/assets/app-Dn-ilW5q.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/app-CJhgebZV.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+<header class="fixed top-0 inset-x-0 z-140 md:pt-5 pt-3 px-4">
+    <div class="max-w-260 mx-auto">
+        <div class="flex items-center justify-between gap-4 py-2.5 ps-5 pe-2.5 rounded-full border border-fg/10 bg-surface-2/80 backdrop-blur-xl">
+            <a href="/" class="flex items-center gap-2.5 shrink-0">
+                    <img src="/images/contract-logo.png" alt="Gerege Contract" class="h-7 logo-mono">
+                <span class="text-base font-medium tracking-[-0.02em] text-fg">gerege-<span class="text-muted">contract</span></span>
+            </a>
+
+            <nav id="navbar" class="hidden lg:flex items-center gap-1">
+                                    <a href="/" class="py-2 px-4 rounded-full text-sm text-muted transition-colors hover:text-fg">Нүүр</a>
+                                    <a href="/#how" class="py-2 px-4 rounded-full text-sm text-muted transition-colors hover:text-fg">Хэрхэн ажилладаг</a>
+                                    <a href="/#steps" class="py-2 px-4 rounded-full text-sm text-muted transition-colors hover:text-fg">Алхам</a>
+                                    <a href="/trust" class="py-2 px-4 rounded-full text-sm text-muted transition-colors hover:text-fg">Аюулгүй байдал</a>
+                            </nav>
+
+            <div class="flex items-center gap-2">
+                <button type="button" data-theme-toggle aria-label="Light / dark горим солих" class="inline-flex size-11 items-center justify-center rounded-full border border-fg/15 text-fg transition-colors hover:bg-fg/5">
+                    <i class="iconify tabler--moon size-5 theme-icon-dark"></i>
+                    <i class="iconify tabler--sun size-5 theme-icon-light"></i>
+                </button>
+
+                <a href="https://contract.mn/login" class="md:inline-flex hidden items-center gap-2 h-11 px-5 rounded-full bg-accent text-on-accent text-sm font-medium">
+                    Нэвтрэх <i class="iconify tabler--arrow-up-right size-4"></i>
+                </a>
+
+                <button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="mobile-menu" data-hs-overlay="#mobile-menu" class="lg:hidden inline-flex size-11 items-center justify-center rounded-full border border-fg/15 text-fg">
+                    <i class="iconify tabler--menu-2 size-5"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hs-overlay hs-overlay-open:translate-y-0 hs-overlay-open:opacity-100 opacity-0 hs-overlay-open:top-auto [--body-scroll:true] fixed inset-x-0 top-0 z-140 -translate-y-full transform transition-all duration-300 lg:hidden px-4" role="dialog" tabindex="-1" aria-labelledby="mobile-menu-label">
+        <div class="max-w-260 mx-auto mt-2 p-2 rounded-3xl border border-fg/10 bg-surface-2">
+            <div class="flex flex-col">
+                                    <a href="/" class="py-3.5 px-4 rounded-2xl text-fg hover:bg-fg/5">Нүүр</a>
+                                    <a href="/#how" class="py-3.5 px-4 rounded-2xl text-fg hover:bg-fg/5">Хэрхэн ажилладаг</a>
+                                    <a href="/#steps" class="py-3.5 px-4 rounded-2xl text-fg hover:bg-fg/5">Алхам</a>
+                                    <a href="/trust" class="py-3.5 px-4 rounded-2xl text-fg hover:bg-fg/5">Аюулгүй байдал</a>
+                                <a href="https://contract.mn/login" class="mt-2 h-13 inline-flex items-center justify-center rounded-2xl bg-accent text-on-accent font-medium">Нэвтрэх</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden lg:pt-44 pt-32">
+        <div class="absolute inset-0 glow-top -z-1"></div>
+
+        <div class="container relative">
+            <!-- Corner meta labels -->
+            <div class="hidden md:flex justify-between mb-14 text-fg">
+                <div class="label">Цахим<span>гэрээ</span></div>
+                <div class="label text-center">eID<span>Mongolia</span></div>
+                <div class="label text-end">Gerege<span>Systems</span></div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 items-center gap-10">
+                <div class="lg:col-span-7" data-aos="fade-up">
+                    <div class="flex flex-wrap gap-2 mb-7">
+                        <span class="pill"><span class="size-1.5 rounded-full bg-accent"></span> eID Mongolia</span>
+                        <span class="pill">PAdES</span>
+                        <span class="pill">PIN2</span>
+                    </div>
+
+                    <h1 class="display mb-6">Гэрээгээ <span class="text-accent whitespace-nowrap">eID-ээр</span> байгуул. <span class="text-muted">Уулзах, хэвлэх, скан хийх шаардлагагүй.</span></h1>
+
+                    <p class="text-muted md:text-lg max-w-xl mb-9">Gerege Contract — загвараасаа гэрээ үүсгээд талуудаа регистрээр нэрлэнэ. Тал бүр eID Mongolia аппаараа ээлжээрээ тоон гарын үсэг зурна.</p>
+
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a href="https://contract.mn/login" class="btn-accent">Эхлэх <i class="iconify tabler--arrow-up-right size-5"></i></a>
+                        <a href="#how" class="btn-ghost">Хэрхэн ажилладаг</a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative flex justify-center" data-aos="fade-up" data-aos-delay="150">
+                    <!-- construction lines -->
+                    <div class="absolute inset-y-[-10%] start-[18%] w-px dashed-v"></div>
+                    <div class="absolute inset-y-[-10%] end-[18%] w-px dashed-v"></div>
+                    <div class="absolute inset-x-[-10%] top-[22%] h-px dashed-h"></div>
+                    <div class="absolute inset-[8%] rounded-full glow-accent blur-2xl"></div>
+
+                    <img src="/images/home/phone-hand.png" alt="eID Mongolia апп — найдвартай хамгаалалт" class="relative lg:max-h-150 max-h-105 w-auto">
+                </div>
+            </div>
+        </div>
+
+        <!-- Giant cropped wordmark -->
+        <div class="relative mt-6 -mb-[4vw] text-center pointer-events-none" aria-hidden="true">
+            <div class="wordmark bg-linear-to-b from-fg/90 to-fg/0 bg-clip-text text-transparent">contract</div>
+        </div>
+    </section>
+
+    <!-- Problem / Solution -->
+    <section class="relative lg:pt-30 pt-20">
+        <div class="container">
+            <div class="flex items-end justify-between gap-6 mb-10">
+                <h2 class="h2 max-w-3xl">Гэрээ байгуулах <span class="text-muted">хамгийн энгийн арга</span></h2>
+                <div class="label text-end hidden md:block">Асуудал<span>шийдэл</span></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="rounded-3xl bg-surface border border-fg/8 lg:p-10 p-7 min-h-70 flex flex-col justify-between" data-aos="fade-up">
+                    <div class="flex items-start justify-between gap-4"><div class="label text-muted">Өмнө нь</div><img src="/images/icons3d-white/folder-files.webp" alt="" class="size-20 -mt-2 -me-2 opacity-90" loading="lazy"></div>
+                    <div>
+                        <h3 class="text-3xl mb-3">Уулзах, хэвлэх, скан хийх</h3>
+                        <p class="text-muted">Гэрээ бүрт талууд биечлэн уулзаж, цаасаар гарын үсэг зурж, дахин скан хийдэг.</p>
+                    </div>
+                </div>
+
+                <div class="rounded-3xl bg-accent text-on-accent lg:p-10 p-7 min-h-70 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start justify-between gap-4"><div class="label">Gerege Contract</div><img src="/images/icons3d-white/phone-face-id.webp" alt="" class="size-20 -mt-2 -me-2" loading="lazy"></div>
+                    <div>
+                        <h3 class="text-3xl mb-3">Тал бүр утаснаасаа зурна</h3>
+                        <p class="text-on-accent/75">Тал бүр eID Mongolia аппаараа ээлжээрээ тоон гарын үсэг зурна — хуулийн хүчинтэй (PAdES).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works — step cards -->
+    <section id="how" class="lg:py-40 py-24 scroll-mt-24">
+        <div class="container">
+            <div class="grid lg:grid-cols-12 gap-6 mb-12">
+                <div class="lg:col-span-7">
+                    <div class="label text-accent mb-4">Хэрхэн<span>ажилладаг</span></div>
+                    <h2 class="h2">Загвараас гарын үсэг хүртэл <span class="text-muted">нэг урсгал</span></h2>
+                </div>
+                <p class="lg:col-span-4 lg:col-start-9 self-end text-muted">Гэрээ бүр нэг PDF: талууд дарааллаар нь гарын үсэг зурж, гарын үсэг бүр өмнөхийнхөө дээр давхарлагдана.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-4">
+                <div class="group rounded-3xl bg-surface border border-fg/8 p-6 md:min-h-90 min-h-60 flex flex-col justify-between" data-aos="fade-up">
+                    <img src="/images/icons3d-white/task-clipboard.webp" alt="" class="size-24 -ms-3 -mt-3 transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-[-4deg]" loading="lazy">
+                    <div>
+                        <div class="text-xs text-muted mb-2">01</div>
+                        <h3 class="text-2xl mb-3">Word загвар</h3>
+                        <p class="text-sm text-muted">Өөрийн .docx загварт талбар (давхар угалзан хаалтанд) бичээд оруулна — гэрээ бүрт бөглөөд PDF болгоно, формат нь хэвээр.</p>
+                    </div>
+                </div>
+
+                <div class="group rounded-3xl bg-inv text-inv-fg p-6 md:min-h-90 min-h-60 flex flex-col justify-between lg:mt-10" data-aos="fade-up" data-aos-delay="80">
+                    <img src="/images/icons3d-white/user-profile.webp" alt="" class="size-24 -ms-3 -mt-3 transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-[-4deg]" loading="lazy">
+                    <div>
+                        <div class="text-xs text-inv-fg/50 mb-2">02</div>
+                        <h3 class="text-2xl mb-3">Талуудыг eID-ээр таних</h3>
+                        <p class="text-sm text-inv-fg/60">Регистрийг оруулахад тэр хүний утас руу eID хүсэлт очиж, баталгаажсан нэр нь гэрээнд орно.</p>
+                    </div>
+                </div>
+
+                <div class="group rounded-3xl bg-accent text-on-accent p-6 md:min-h-90 min-h-60 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="160">
+                    <img src="/images/icons3d-white/paper-plane.webp" alt="" class="size-24 -ms-3 -mt-3 transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-[-4deg]" loading="lazy">
+                    <div>
+                        <div class="text-xs text-on-accent/60 mb-2">03</div>
+                        <h3 class="text-2xl mb-3">Хүлээгдэж буй гарын үсэг</h3>
+                        <p class="text-sm text-on-accent/75">Хүсэлт тал бүрийн eID апп руу ээлжээрээ очно. Нэг нь зурмагц дараагийнх руу автоматаар илгээгдэнэ.</p>
+                    </div>
+                </div>
+
+                <div class="group rounded-3xl bg-surface border border-fg/8 p-6 md:min-h-90 min-h-60 flex flex-col justify-between lg:mt-10" data-aos="fade-up" data-aos-delay="240">
+                    <img src="/images/icons3d-white/hourglass.webp" alt="" class="size-24 -ms-3 -mt-3 transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-[-4deg]" loading="lazy">
+                    <div>
+                        <div class="text-xs text-muted mb-2">04</div>
+                        <h3 class="text-2xl mb-3">Хугацаа ба загвар бүртгэл</h3>
+                        <p class="text-sm text-muted">Загвар бүр хэдэн тал оролцох, хэдэн хоногт зурах ёстойг бүртгэнэ; хугацаа хэтэрвэл гэрээ хаагдана.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Steps — light rhythm break -->
+    <section id="steps" class="scroll-mt-24 px-4">
+        <div class="max-w-330 mx-auto rounded-[32px] bg-inv text-inv-fg lg:p-16 md:p-10 p-7">
+            <div class="flex md:flex-row flex-col md:items-end justify-between gap-6 mb-14">
+                <div>
+                    <div class="label mb-4">Гурван<span class="text-inv-fg/45!">алхам</span></div>
+                    <h2 class="h2 text-inv-fg">Загвар, талууд, <span class="text-inv-fg/40">гарын үсэг</span></h2>
+                </div>
+                <p class="text-inv-fg/55">Гэрээ бүр ижил замаар явна.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 border-t border-inv-fg/12">
+                <div class="pt-8 md:pe-8 pb-6 md:border-e border-b md:border-b-0 border-inv-fg/12" data-aos="fade-up">
+                    <div class="flex items-center justify-between mb-8"><div class="text-[clamp(64px,8vw,120px)] font-medium tracking-[-0.05em] leading-none">01</div><img src="/images/icons3d-white/folder-files.webp" alt="" class="size-20" loading="lazy"></div>
+                    <h3 class="text-2xl text-inv-fg mb-2">Загвар</h3>
+                    <p class="text-inv-fg/55">Word файлаа оруулж талбаруудаа бөглөнө</p>
+                </div>
+                <div class="pt-8 md:px-8 pb-6 md:border-e border-b md:border-b-0 border-inv-fg/12" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center justify-between mb-8"><div class="text-[clamp(64px,8vw,120px)] font-medium tracking-[-0.05em] leading-none">02</div><img src="/images/icons3d-white/phone-face-id.webp" alt="" class="size-20" loading="lazy"></div>
+                    <h3 class="text-2xl text-inv-fg mb-2">Талууд</h3>
+                    <p class="text-inv-fg/55">Регистрээр нэрлэж eID-ээр баталгаажуулна</p>
+                </div>
+                <div class="pt-8 md:ps-8 pb-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center justify-between mb-8"><div class="text-[clamp(64px,8vw,120px)] font-medium tracking-[-0.05em] leading-none">03</div><img src="/images/icons3d-white/checkmark.webp" alt="" class="size-20" loading="lazy"></div>
+                    <h3 class="text-2xl text-inv-fg mb-2">Гарын үсэг</h3>
+                    <p class="text-inv-fg/55">Тал бүр eID аппаараа PIN2-оор зурна</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section id="trust" class="lg:py-40 py-24 scroll-mt-24">
+    <div class="container">
+        <div class="relative overflow-hidden rounded-[32px] bg-surface border border-fg/8 lg:p-16 md:p-10 p-7">
+            <div class="absolute -top-40 -end-40 size-120 rounded-full glow-accent blur-3xl opacity-60 pointer-events-none"></div>
+
+            <div class="relative grid lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-6">
+                    <div class="label text-accent mb-4">Баталгаа<span>trust</span></div>
+                    <h2 class="h2 mb-6">Гарын үсэг PDF дотроо, <span class="text-muted">шалгалт хэн бүхэнд нээлттэй</span></h2>
+                    <p class="text-muted mb-10 max-w-lg">eID-ийн мэргэшсэн гэрчилгээ → PAdES-BASELINE-LT → цагийн тамга → contract.mn/verify. Файлаа хаана ч бие даан шалгана.</p>
+
+                    <div class="flex flex-wrap gap-2">
+                                                    <span class="pill">PIN2</span>
+                                                    <span class="pill">PAdES-BASELINE-LT</span>
+                                                    <span class="pill">Timestamp</span>
+                                                    <span class="pill">Verify</span>
+                                            </div>
+                </div>
+
+                <div class="lg:col-span-6 flex flex-col gap-2.5">
+                                            <div class="flex items-center gap-4 h-16 ps-2.5 pe-4 rounded-2xl bg-surface-2" data-aos="fade-up" data-aos-delay="0">
+                            <span class="size-11 shrink-0 inline-flex items-center justify-center rounded-xl bg-bg border border-fg/8">
+                                <img src="/images/icons3d/badge-glass.webp" alt="" class="size-8 object-contain" loading="lazy">
+                            </span>
+                            <span class="flex-1 text-[15px] font-medium">eID-ийн мэргэшсэн гэрчилгээ</span>
+                            <span class="text-xs text-muted">01</span>
+                        </div>
+                                            <div class="flex items-center gap-4 h-16 ps-2.5 pe-4 rounded-2xl bg-surface-2" data-aos="fade-up" data-aos-delay="80">
+                            <span class="size-11 shrink-0 inline-flex items-center justify-center rounded-xl bg-bg border border-fg/8">
+                                <img src="/images/icons3d/scroll.webp" alt="" class="size-8 object-contain" loading="lazy">
+                            </span>
+                            <span class="flex-1 text-[15px] font-medium">PAdES-BASELINE-LT</span>
+                            <span class="text-xs text-muted">02</span>
+                        </div>
+                                            <div class="flex items-center gap-4 h-16 ps-2.5 pe-4 rounded-2xl bg-surface-2" data-aos="fade-up" data-aos-delay="160">
+                            <span class="size-11 shrink-0 inline-flex items-center justify-center rounded-xl bg-bg border border-fg/8">
+                                <img src="/images/icons3d-white/hourglass.webp" alt="" class="size-8 object-contain" loading="lazy">
+                            </span>
+                            <span class="flex-1 text-[15px] font-medium">Цагийн тамга</span>
+                            <span class="text-xs text-muted">03</span>
+                        </div>
+                                                            <a href="https://contract.mn/verify" target="_blank" class="group flex items-center gap-4 h-16 ps-2.5 pe-4 rounded-2xl bg-accent text-on-accent" data-aos="fade-up" data-aos-delay="240">
+                        <span class="size-11 shrink-0 inline-flex items-center justify-center rounded-xl bg-bg">
+                            <img src="/images/icons3d-white/phone-qr.webp" alt="" class="size-8 object-contain" loading="lazy">
+                        </span>
+                        <span class="flex-1 text-[15px] font-medium">contract.mn/verify</span>
+                                                    <i class="iconify tabler--arrow-up-right size-5 transition-transform group-hover:rotate-45"></i>
+                                            </a>
+
+                    <div class="grid sm:grid-cols-2 gap-2.5 mt-6">
+                                                    <div class="flex items-start gap-3 p-4 rounded-2xl border border-fg/8">
+                                <i class="iconify tabler--circle-check-filled size-5 text-accent shrink-0 mt-0.5"></i>
+                                <p class="text-sm">PIN2-оор баталгаажсан мэргэшсэн гарын үсэг</p>
+                            </div>
+                                                    <div class="flex items-start gap-3 p-4 rounded-2xl border border-fg/8">
+                                <i class="iconify tabler--circle-check-filled size-5 text-accent shrink-0 mt-0.5"></i>
+                                <p class="text-sm">Гэрээг зөвхөн талууд нь хардаг</p>
+                            </div>
+                                                    <div class="flex items-start gap-3 p-4 rounded-2xl border border-fg/8">
+                                <i class="iconify tabler--circle-check-filled size-5 text-accent shrink-0 mt-0.5"></i>
+                                <p class="text-sm">Цагийн тамга, гэрчилгээний хүчинтэй байдлын баталгаа</p>
+                            </div>
+                                                    <div class="flex items-start gap-3 p-4 rounded-2xl border border-fg/8">
+                                <i class="iconify tabler--circle-check-filled size-5 text-accent shrink-0 mt-0.5"></i>
+                                <p class="text-sm">Гэрээ бүр шалгах кодтой</p>
+                            </div>
+                                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Call To Action Section -->
+    <section class="relative lg:pb-30 pb-20 overflow-hidden">
+    <div class="absolute inset-x-0 bottom-0 h-[70%] -z-1" style="background: radial-gradient(50% 60% at 50% 100%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 70%)"></div>
+
+    <div class="container text-center">
+        <img src="/images/icons3d-white/rocket.webp" alt="" class="size-28 mx-auto mb-6" loading="lazy">
+        <div class="label mb-6">Эхлэх<span>start</span></div>
+        <h2 class="display max-w-4xl mx-auto mb-6">Анхны гэрээгээ <span class="text-accent">өнөөдөр</span> байгуул</h2>
+        <p class="text-muted md:text-lg mb-10">eID Mongolia-ээр нэвтрээд гэрээгээ нэг минутад илгээнэ.</p>
+
+        <a href="https://contract.mn/login" class="btn-accent">Эхлэх <i class="iconify tabler--arrow-up-right size-5"></i></a>
+    </div>
+</section>
+
+    <!-- Footer -->
+<footer id="footer" class="relative overflow-hidden border-t border-fg/8 pt-20">
+    <div class="container">
+        <div class="flex flex-col items-center text-center mb-16">
+                <img src="/images/contract-logo.png" alt="Gerege Contract" class="h-14 mb-5 logo-mono">
+            <p class="text-muted">eID-ээр гэрээ байгуулах платформ.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10 pb-12 border-b border-fg/8">
+            <div>
+                <div class="label mb-5">Цэс<span>menu</span></div>
+                <div class="space-y-3 *:block *:text-muted *:hover:text-fg *:transition-colors">
+                                                                        <a href="/">Нүүр</a>
+                                                                                                <a href="/#how">Хэрхэн ажилладаг</a>
+                                                                                                <a href="/#steps">Алхам</a>
+                                                                                                        </div>
+            </div>
+
+            <div class="md:text-center">
+                <div class="label mb-5">Платформ<span>platform</span></div>
+                <div class="space-y-3 *:block *:text-muted *:hover:text-fg *:transition-colors">
+                    <a href="/trust">Аюулгүй байдал</a>
+                                            <a href="https://contract.mn/verify" target="_blank">Шалгах</a>
+                                        <a href="https://contract.mn/login">Нэвтрэх</a>
+                </div>
+            </div>
+
+            <div class="md:text-end">
+                <div class="label mb-5">Gerege<span>systems</span></div>
+                <p class="text-muted">Gerege Nexus дээр суурилсан</p>
+            </div>
+        </div>
+
+        <div class="flex md:flex-row flex-col justify-between gap-2 py-6 text-xs text-muted">
+            <div>© 2026 Gerege Systems · Gerege Contract</div>
+            <div><span>BUILT ON</span> <span class="text-fg font-bold">GEREGE NEXUS</span></div>
+        </div>
+    </div>
+
+    <div class="text-center -mb-[6vw] pointer-events-none" aria-hidden="true">
+        <div class="wordmark bg-linear-to-b from-accent/70 via-accent/20 to-transparent bg-clip-text text-transparent">gerege</div>
+    </div>
+</footer>
+
+</body>
+
+</html>
